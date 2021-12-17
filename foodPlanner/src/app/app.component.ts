@@ -322,7 +322,7 @@ export class AppComponent {
       startTime: ""    }, //Brussels, Garlic, Bacon
     {
       p: "George",
-      title: "carrot Puree",
+      title: "Carrot Puree",
       timeRequired: 120,
       endTime: 14,
       stepsCompleted: 0,

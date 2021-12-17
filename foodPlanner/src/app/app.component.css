@@ -139,7 +139,7 @@ background: linear-gradient(35deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1))
 }
 
 .timeline {
-  width: 400px;
+  width: 360px;
   border-left: 2px solid lightslategrey;
   min-height: 300px;
   display: flex;
@@ -148,7 +148,8 @@ background: linear-gradient(35deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1))
 }
 
 .timeline-step {
-  background: linear-gradient(35deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  background: linear-gradient(
+  35deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
   padding: 5px;
   border-radius: 4px;
   margin: 10px 0;
@@ -165,7 +166,7 @@ background: linear-gradient(35deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1))
   left: -40px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.2);
+  background: linear-gradient(to right, rgba(0,0,0,.15), rgba(0,0,0,0.06));
 }
 
 .time-cont {

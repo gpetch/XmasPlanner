@@ -20,6 +20,7 @@
 
 
 <div class="column center" style="flex-wrap: wrap; margin-top: 60px;">
+  <h1>Xmas Eve</h1>
   <div class="timeline">
     <div class="timeline-step" *ngFor="let timelineStep of timelineSteps(1)" [class.fade]="timelineStep.completed == true">
       <div class="time-cont">
@@ -33,8 +34,8 @@
       <input type="checkbox" name="" value="" (click)="setMainTaskStepComplete(timelineStep)">
     </div>
   </div>
-
-  <div class="timeline" style="margin-top: 20px">
+  <h1>Xmas Day</h1>
+  <div class="timeline" style="margin-top: 0px">
     <div class="timeline-step" *ngFor="let timelineStep of timelineSteps(2)" [class.fade]="timelineStep.completed == true">
       <div class="time-cont">
         {{timelineStep.startTime}}
