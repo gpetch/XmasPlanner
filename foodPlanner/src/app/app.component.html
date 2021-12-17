@@ -1,0 +1,88 @@
+
+
+
+<!-- <div class="card-slider" style="padding-top: 50px;">
+
+  <div class="task-card" *ngFor="let task of retTaskList(); index as i">
+      <div class="title-row row spaced" [class.greenComplete]="task.completed == true">
+        <h4 style="text">{{task.title}}</h4>
+      </div>
+      <div class="row center " (click)="mark_complete(task)">
+        <h1 >{{task.stepsCompleted}} / {{task.steps.length}}</h1>
+      </div>
+      <div class="row center complete" (click)="gotoMainCard(i)"  >
+        <h5>View Details</h5>
+      </div>
+  </div>
+
+</div> -->
+
+
+
+<div class="column center" style="flex-wrap: wrap; margin-top: 60px;">
+  <div class="timeline">
+    <div class="timeline-step" *ngFor="let timelineStep of timelineSteps(1)" [class.fade]="timelineStep.completed == true">
+      <div class="time-cont">
+        {{timelineStep.startTime}}
+      </div>
+      <div class="date-cont">
+        {{timelineStep.day == 1 ? "24th" : "25th"}}
+      </div>
+      <h6>{{timelineStep.MainTask}}</h6>
+      <h6>{{timelineStep.desc}}</h6>
+      <input type="checkbox" name="" value="" (click)="setMainTaskStepComplete(timelineStep)">
+    </div>
+  </div>
+
+  <div class="timeline" style="margin-top: 20px">
+    <div class="timeline-step" *ngFor="let timelineStep of timelineSteps(2)" [class.fade]="timelineStep.completed == true">
+      <div class="time-cont">
+        {{timelineStep.startTime}}
+      </div>
+      <div class="date-cont">
+        {{timelineStep.day == 1 ? "24th" : "25th"}}
+      </div>
+      <h6>{{timelineStep.MainTask}}</h6>
+      <h6>{{timelineStep.desc}}</h6>
+      <input type="checkbox" name="" value="" (click)="setMainTaskStepComplete(timelineStep)">
+    </div>
+  </div>
+</div>
+
+<div class="row center" style="margin-top: 60px;">
+  <div class="main-card" id="mainCard">
+    <div class="next" (click)="nextTask()">
+      <h6>Next</h6>
+    </div>
+    <div class="back" (click)="prevTask()">
+      <h6>Back</h6>
+    </div>
+    <h1>{{this.selectedTask.title}}</h1>
+    <div class="row center" *ngFor="let ele of this.selectedTask.steps">
+      <div class="task-step row spaced"  >
+        <h6 (click)="expandStep(ele)" class="pointer">{{ele.desc}}</h6>
+        <input type="checkbox" name="" value="{{ele.completed}}" (click)="setStepComplete(ele)">
+        <div class="row center"  style="flex-wrap:wrap">
+          <div class="column center" *ngIf="ele.expandStep == true" style="width: 100%">
+            <div class="row spaced" style="margin-top: 30px;">
+              <h6 >Est. Time: </h6>
+              <h6>{{ele.timeReq}} minutes</h6>
+            </div>
+            <div class="row spaced">
+              <h6>Day:</h6>
+              <h6>{{ele.day == 1 ? "24th" : "25th"}}</h6>
+            </div>
+            <div class="row spaced">
+              <h6>Start Time: </h6>
+              <h6></h6>
+            </div>
+            <div class="row spaced">
+              <h6>underway:</h6>
+              <h6>{{ele.underway == true ? "Yes" : "No"}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
