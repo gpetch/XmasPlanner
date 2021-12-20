@@ -87,3 +87,27 @@
     </div>
   </div>
 </div>
+
+<div class="row center" style="margin-top: 60px;">
+  <div class="main-card" id="mainCard">
+    <h1>Ingredient List</h1>
+    <div class="row center" *ngFor="let ingredient of this.ingredientList">
+      <div class="task-step row spaced"  >
+        <h6 class="pointer">{{ingredient}}</h6>
+        <input type="checkbox" name="" value="false">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row center" style="margin-top: 60px;">
+  <div class="main-card" id="mainCard">
+    <h1>Equipment</h1>
+    <div class="row center" *ngFor="let equipment of this.equipmentList">
+      <div class="task-step row spaced"  >
+        <h6 class="pointer">{{equipment}}</h6>
+        <input type="checkbox" name="" value="false">
+      </div>
+    </div>
+  </div>
+</div>

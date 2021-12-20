@@ -8,13 +8,16 @@ interface TaskEle {
   timeReq: number;
   day: Number;
   person: string;
+
   underway: boolean;
   startTime: string;
   deadline?: number;
   requirements?: any[];
   startAnyTime?: boolean;
   expandStep?: boolean;
+  ingredients?: any[],
 }
+
 
 interface Task {
   p: string;
@@ -111,6 +114,9 @@ export class AppComponent {
       ],
       completed: false,
       day: 1,
+      requirements: [
+        "Sous Vide"
+      ],
       startTime: ""    },  //beef
     {
       p: "george",
@@ -543,6 +549,53 @@ export class AppComponent {
       startTime: ""} //Pigs in Blankets
   ]
 
+  ingredientList = [
+    "3kg Beef",
+    "10-12 Three-bird Roasts",
+    "8kg Potato",
+    "3kg Carrots",
+    "3.5kg Parsnips",
+    "20-40 Pigs in Blankets (depending on size)",
+    "5 packs of Coop Port Cabbage",
+    "4 sticks of butter",
+    "milk",
+    "Sausage Meat",
+    "Stuffing Mix",
+    "Chicken Stock",
+    "Beef Stock",
+    "veal Jus",
+    "Brussels",
+    "Bacon",
+    "white Wine",
+    "port",
+    "3 Butternut Squash",
+    "Thyme",
+    "Flour",
+    "redcurrent sauce / cranberry sauce",
+    "12 Eggs",
+    "Oil",
+    "Rosemary",
+    "garlc",
+    "Basil",
+    "salt",
+    "pepper",
+
+  ]
+
+  equipmentList = [
+    "Sous Vide",
+    "Sous Vide Bags",
+    "stock pot",
+    "10 pans",
+    "Slow Cooker",
+    "Trays",
+    "knives",
+    "Blue Pan",
+    "cling film",
+    "foil",
+
+  ]
+
 
   completedTasks: number = 0;
 
@@ -641,16 +694,17 @@ export class AppComponent {
   }
 
   setMainTaskStepComplete(ele) {
-    this.taskList.forEach(element => {
-      if (element.title == ele.MainTask) {
-        element.steps.forEach(subElement => {
-          if (subElement.desc == ele.desc) {
-            subElement.completed = !subElement.completed
-          }
-        });
-      }
-    });
-    this.resetStepCount()
+    ele.completed = true
+    // this.taskList.forEach(element => {
+    //   if (element.title == ele.MainTask) {
+    //     element.steps.forEach(subElement => {
+    //       if (subElement.desc == ele.desc) {
+    //         subElement.completed = !subElement.completed
+    //       }
+    //     });
+    //   }
+    // });
+    // this.resetStepCount()
   }
 
 
