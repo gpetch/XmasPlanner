@@ -139,7 +139,7 @@ background: linear-gradient(35deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1))
 }
 
 .timeline {
-  width: 300px;
+  width: 290px;
   border-left: 2px solid lightslategrey;
   min-height: 300px;
   display: flex;
